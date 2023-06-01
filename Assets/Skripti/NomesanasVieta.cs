@@ -46,6 +46,7 @@ public class NomesanasVieta : MonoBehaviour,
 					&& (xIzmStarpiba <= 0.1 && yIzmStarpiba <= 0.1))
 				{
 					Debug.Log("Nomests pareizajā vietā!");
+					Win.masinas++;
                     objektuSkripts.vaiIstajaVieta = true;
                     eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition
 						= GetComponent<RectTransform>().anchoredPosition;
@@ -77,7 +78,7 @@ public class NomesanasVieta : MonoBehaviour,
 							break;
 					}
 				}
-
+			
 				//Ja tagi nesakrīt, tātad nepareizajā vietā
 			} else	{
 				objektuSkripts.vaiIstajaVieta = false;
