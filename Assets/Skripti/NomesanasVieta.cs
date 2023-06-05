@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class NomesanasVieta : MonoBehaviour, 
 	IDropHandler{
+	public Win k;
 	private float vietasZRot, velkObjZRot, rotacijasStarpiba;
 	private Vector2 vietasIzm, velkObjIzm;
 	private float xIzmStarpiba, yIzmStarpiba;
@@ -46,7 +47,10 @@ public class NomesanasVieta : MonoBehaviour,
 					&& (xIzmStarpiba <= 0.1 && yIzmStarpiba <= 0.1))
 				{
 					Debug.Log("Nomests pareizajā vietā!");
-					Win.masinas++;
+					k.masinasSkaits++;
+					if (k.masinasSkaits == 11) {
+						k.endGame ();
+					}
                     objektuSkripts.vaiIstajaVieta = true;
                     eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition
 						= GetComponent<RectTransform>().anchoredPosition;
